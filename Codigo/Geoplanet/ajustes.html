@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Geo Planet - Ajustes</title>
+        <link rel="stylesheet" href="ajustes.css"> 
+    </head>
+    <body> 
+        <script src="acciones.js"></script> 
+        
+        <header> 
+            <div class="header-left">
+                <button onclick="irAPagina2()" class="flecha"> 
+                    <img src="images/flechaparairatrasss.png" alt="Volver"> 
+                </button> 
+                <img src="imagenes/ajuste_1.png" class="ajuste" alt="Ajuste">
+                <h1 class="titulo_ajustes">Ajustes</h1>
+            </div>
+
+            <div class="header-right">
+                <img src="imagenes/geoplanetlogo.png" class="logo" alt="Geo Planet"> 
+                <div class="usuario-container">
+                    <img src="imagenes/usuario.png" class="cuenta" alt="Cuenta"> 
+                    <span class="texto-usuario">Usuario</span> 
+                </div>
+            </div>
+        </header> 
+
+        <main class="panel-ajustes">
+            <!-- Música -->
+            <div class="fila-control">
+                <span class="texto-opcion">Musica</span>
+                <div class="control-musica">
+                    <input type="range" id="volumen" min="0" max="1" step="0.01" value="0.8" oninput="cambiarVolumen()"> 
+                </div> 
+            </div>
+
+            <!-- Sonido -->
+            <div class="fila-control">
+                <span class="texto-opcion">Sonido</span>
+                <div class="control-sonido">
+                    <input type="range" id="sonido" min="0" max="1" step="0.01" value="0.8">
+                </div>
+            </div>
+
+            <!-- Resolución -->
+            <div class="fila-control">
+                <span class="texto-opcion">Resolución</span>
+                <div class="control-resolucion">
+                    <button class="flecha-resolucion">◀</button>
+                    <div class="resolucion-valor">1280 x 720</div>
+                    <button class="flecha-resolucion">▶</button>
+                </div>
+            </div>
+
+            <!-- Modo Daltónico -->
+            <div class="fila-control">
+                <span class="texto-opcion">Modo Daltonico</span>
+                <div class="control-daltonico">
+                    <button class="boton-daltonico activo">Act</button>
+                    <button class="boton-daltonico">Desact</button>
+                </div>
+            </div>
+        </main>
+
+        <audio id="musica" loop autoplay>
+            <source src="endles.mp3" type="audio/mpeg"> 
+        </audio>
+    </body> 
+</html>
