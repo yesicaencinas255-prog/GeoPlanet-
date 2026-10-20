@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEO Planet - Personaliza tu nombre</title>
+  
+  <!-- FUENTE GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="CSS/personalizacion_nombre.css">
+</head>
+<body>
+
+  <div class="pantalla-personalizacion">
+
+    <!-- BARRA SUPERIOR -->
+    <header class="barra-superior">
+      <div class="pestanas">
+        <span class="pestana pestana-geo">GEO</span>
+        <span class="pestana pestana-planet">Planet</span>
+      </div>
+      <img src="imagenes/logo.png" alt="GEO Planet" class="logo-header">
+    </header>
+
+    <!-- BOTÓN ATRÁS -->
+    <button class="btn-atras" id="btnAtras" onclick="window.location.href='pantallaregistro.html'"></button>
+
+    <!-- CONTENIDO CENTRAL -->
+    <main class="contenido-central">
+      
+      <div class="contenedor-planeta">
+        <img src="imagenes/planetaa.png" alt="Planeta" class="planeta">
+      </div>
+
+      <h1 class="titulo">geoplanet</h1>
+
+      <div class="contenedor-input-nombre">
+        <input type="text" id="inputNombre" placeholder="Ingresar nombre" maxlength="15" autocomplete="off">
+      </div>
+
+      <p id="mensajeNombre" class="mensaje-nombre" style="color: red; text-align: center;"></p>
+
+      <button id="btnSiguiente" class="btn-confirmar">Siguiente</button>
+
+    </main>
+
+  </div>
+<script src="JavaScript/personalizacion_nombre.js"></script>
+</body> 
+</html>

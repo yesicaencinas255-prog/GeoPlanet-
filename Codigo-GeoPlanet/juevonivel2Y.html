@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoPlanet - Pregunta de Geografía</title>
+    <link rel="stylesheet" href="CSS/juegonivel2.css"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+ 
+</head>
+<body>
+
+  <div id="game-overlay" class="overlay hidden">
+    <div class="modal">
+      <h2 id="modal-title">¡Resultado!</h2>
+      <p id="modal-message">Mensaje del juego</p>
+      <button id="modal-btn" onclick="restartGame()">Jugar de nuevo</button>
+    </div>
+  </div>
+
+  <div class="game-container">
+    <header class="top-bar">
+      <button class="icon-btn" title="Volver atrás" onclick="goBack()">
+        <img src="imagenes/flechaparairatrasss.png" alt="Atrás" onerror="this.style.display='none'">
+      </button>
+
+      <div class="timer-container">
+        <img src="imagenes/cronometro.png" alt="Cronómetro" id="timer-icon" class="timer-img ticking-anim" onerror="this.style.display='none'">
+        <span id="timer-display" class="timer-text">00:25</span>
+      </div>
+
+      <div class="user-logo-group">
+        <button class="icon-btn" title="Perfil" onclick="openProfile()">
+          <img src="imagenes/usuario.png" alt="Usuario" onerror="this.style.display='none'">
+        </button>
+        <img src="imagenes/Logo.png" alt="GeoPlanet Logo" class="logo-img" onerror="this.style.display='none'">
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="question-box">
+        <h1 class="question-title">¿De qué país es esta bandera?</h1>
+      </div>
+
+      <div class="flag-container">
+        <img src="imagenes/banderachinafalsa.png" alt="Bandera" class="flag-img">
+      </div>
+
+      <div class="options-grid">
+        <button class="option-btn" onclick="checkAnswer('China')">China</button>
+        <button class="option-btn" onclick="checkAnswer('España')">España</button>
+        <button class="option-btn" onclick="checkAnswer('Ninguna')">Ninguna</button>
+        <button class="option-btn" onclick="checkAnswer('Italia')">Italia</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="JavaScript/juegonivel2.js"></script>
+</body>
+</html>

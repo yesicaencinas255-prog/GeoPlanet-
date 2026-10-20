@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEO Planet — ¿Qué es un límite?</title>
+  <link rel="stylesheet" href="CSS/Preguntas.css">
+  <script src="JavaScript/score.js"></script>
+</head>
+<body>
+  <header class="barra-superior">
+    <div class="logo-pill">
+      <img src="imagenes/logo.png" alt="GEO Planet" class="logo-img">
+    </div>
+    <button class="btn-cerrar" aria-label="Cerrar" onclick="window.location.href='menu.html'">✕</button>
+  </header>
+
+  <div class="fondo-pantalla"></div>
+
+  <button id="btnAtras" class="btn-nav btn-atras" aria-label="Atrás" onclick="window.history.back()">
+    <img src="imagenes/botonatras.png" alt="Atrás">
+  </button>
+  <button id="btnAdelante" class="btn-nav btn-adelante" aria-label="Adelante" onclick="window.location.href='acertijo.html'">
+    <img src="imagenes/botonatras.png" alt="Adelante">
+  </button>
+
+  <main class="contenedor-juego">
+    <div class="cronometro-box">
+      <img src="imagenes/Reloj.png" alt="Reloj" class="reloj-img">
+      <span id="cronometro" class="tiempo-texto">00:25</span>
+    </div>
+
+    <h1 class="pregunta-titulo">¿Qué es un límite?</h1>
+
+    <div class="marco-respuesta">
+      <input type="text" id="respuestaUsuario" class="input-linea" autocomplete="off" placeholder="Escribí tu respuesta...">
+    </div>
+
+    <div id="mensajeResultado" class="mensaje-resultado"></div>
+
+    <div class="pistas-contenedor">
+      <button class="btn-pista" onclick="usarPista(1)">Pista 1</button>
+      <button class="btn-pista" onclick="usarPista(2)">Pista 2</button>
+      <button class="btn-pista" onclick="usarPista(3)">Pista 3</button>
+    </div>
+
+    <div id="areaPista" class="area-pista"></div>
+
+    <p class="advertencia-texto">
+      <span class="icono-advertencia">🛈</span> Advertencia: Abrir una pista resta tiempo (-3s) y puntaje (-3 pts)
+    </p>
+
+    <button id="btnContinuar" class="btn-continuar" onclick="enviarRespuesta()">
+      Continuar
+    </button>
+  </main>
+
+  <script src="JavaScript/Preguntas.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Geo Planet - Nivel 1</title>
+    <link rel="stylesheet" href="CSS/acertijo.css">
+    <script src="JavaScript/score.js"></script>
+    <style>
+        body, header { margin: 0; padding: 0; border: none !important; box-shadow: none !important; }
+        .mensaje-resultado {
+            margin: 15px auto 0 auto;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-align: center;
+            min-height: 30px;
+            font-family: sans-serif;
+        }
+        .mensaje-resultado.correcto { color: #2ecc71; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+        .mensaje-resultado.incorrecto { color: #e74c3c; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+        .mensaje-resultado.advertencia { color: #f39c12; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+    </style>
+</head>
+<body>
+    <div class="cronometro">
+        <img src="imagenes/Reloj.png" alt="Reloj">
+        <span id="tiempo">00:25</span>
+    </div>
+    <div class="logo"><img src="imagenes/geoplanetlogo.png"></div>
+    <div class="usuario"><img src="imagenes/usuario.png"></div>
+
+    <div class="pregunta">
+        <h1>Acertijos</h1>
+        <p>
+            Del tango rioplatense soy la cuna y el hogar
+            <br>
+            y un Obelisco blanco tengo para festejar
+        </p>
+    </div>
+
+    <div class="respuestas">
+        <button id="argentina" onclick="responder('Argentina')">Argentina</button>
+        <button id="bolivia" onclick="responder('Bolivia')">Bolivia</button>
+        <button id="chile" onclick="responder('Chile')">Chile</button>
+        <button id="venezuela" onclick="responder('Venezuela')">Venezuela</button>
+    </div>
+
+    <div id="mensajeResultado" class="mensaje-resultado"></div>
+
+    <button class="boton-derecha" onclick="siguienteNivel()">
+        <img src="imagenes/flecha_para_ir_atras.png">
+    </button>
+
+    <script src="JavaScript/acertijo.js"></script>
+</body>
+</html>

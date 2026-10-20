@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoPlanet - Pregunta de Geografía</title>
+  <link rel="stylesheet" href="CSS/juegonivel1.2Y.css"> 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+ 
+</head>
+<body>
+
+  <div class="game-container">
+    <header class="top-bar">
+      <button class="icon-btn" title="Volver atrás" onclick="goBack()">
+        <img src="imagenes/flechaparairatrasss.png" alt="Atrás" onerror="this.style.display='none'">
+      </button>
+
+      <div class="timer-container">
+        <img src="imagenes/cronometro.png" alt="Cronómetro" id="timer-icon" class="timer-img ticking-anim" onerror="this.style.display='none'">
+        <span id="timer-display" class="timer-text">00:25</span>
+      </div>
+
+      <div class="user-logo-group">
+        <button class="icon-btn" title="Perfil" onclick="openProfile()">
+          <img src="imagenes/usuario.png" alt="Usuario" onerror="this.style.display='none'">
+        </button>
+        <img src="imagenes/Logo.png" alt="GeoPlanet Logo" class="logo-img" onerror="this.style.display='none'">
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="question-box">
+        <h1 class="question-title">¿De qué país es esta bandera?</h1>
+      </div>
+
+      <div class="flag-container">
+        <img src="imagenes/banderafalsa1.2.png" alt="Bandera" class="flag-img">
+      </div>
+
+      <div class="options-grid">
+        <button class="option-btn" onclick="checkAnswer('Colombia')">Colombia</button>
+        <button class="option-btn" onclick="checkAnswer('Argentina')">Argentina</button>
+        <button class="option-btn" onclick="checkAnswer('Ninguna')">Ninguna</button>
+        <button class="option-btn" onclick="checkAnswer('Chile')">Chile</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal/Cajita de Resultado Final (Oculto por defecto) -->
+  <div id="modalResultado" class="modal-resultado" style="display: none;">
+    <div class="contenido-modal">
+        <h2 id="tituloModal">🏆 ¡Nivel Completado!</h2>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="label">Puntos:</span>
+                <span id="puntosTexto" class="valor">0</span>
+            </div>
+            
+            <div class="stat-box">
+                <span class="label">Monedas:</span>
+                <span id="monedasTexto" class="valor destacado">🪙 0</span>
+            </div>
+
+            <div class="stat-box">
+                <span class="label">Pistas Usadas:</span>
+                <span id="pistasTexto" class="valor">0</span>
+            </div>
+        </div>
+
+        <div class="logros-container">
+            <h3>Logros Conseguidos:</h3>
+            <ul id="listaLogrosModal"></ul>
+        </div>
+
+        <button class="btn-siguiente" onclick="finalizarJuego()">Continuar al Menú</button>
+    </div>
+  </div>
+
+  
+     <script src="JavaScript/juegonivel1.2Y.js"></script>
+</body>
+</html>

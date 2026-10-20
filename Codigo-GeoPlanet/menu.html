@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Planet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/menu.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <header>
+        <div class="top-left">
+            <!-- BOTÓN DE AJUSTES (AQUÍ TE LLEVA A ajustes.html) -->
+            <button onclick="window.location.href='ajustes.html'" class="ajustes" title="Ajustes">
+                <img src="imagenes/ajuste.png" alt="Ajustes">
+            </button>
+            
+            <div class="explorador-card">
+                <div class="planeta-icon">
+                    <img src="imagenes/explorador.png" alt="Planeta" onerror="this.src='https://img.icons8.com/color/96/earth-element.png'">
+                </div>
+                <div class="explorador-info">
+                    <div class="rank-title" id="rank-title">EXPLORADOR</div>
+                    <div class="level-title" id="user-level">Nivel 1</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="xp-bar" style="width: 0%;"></div>
+                        <span class="xp-text" id="xp-text">0 / 0</span>
+                    </div>
+                </div>
+                <div class="star-badge">
+                    <span>⭐</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGO Y CUENTA -->
+        <div class="top-right">
+            <img src="imagenes/geoplanetlogo.png" class="logomenu" alt="Geo Planet">
+            <div class="cuenta-container">
+                <img src="imagenes/usuario.png" class="cuenta" alt="Cuenta">
+                <span id="user-name">Usuario</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHAT LATERAL -->
+    <aside class="chat-panel">
+        <div class="chat-header">
+            <h4>Chat</h4>
+            <div class="buscar-amigo">
+                <button>🔍 Buscar amigo</button>
+                <img src="imagenes/usuario.png" class="usuarios" alt="Cuenta">
+            </div>
+        </div>
+        <div class="chat-list">
+            <div class="chat-item"><strong>Jorge</strong><br><small>Tú: Hola Jugamos</small></div>
+            <div class="chat-item"><strong>Lamin</strong><br><small>Tú: Hola</small></div>
+            <div class="chat-item"><strong>Naty</strong><br><small>Respondeme... jugamos?</small></div>
+            <div class="chat-item"><strong>Yess</strong><br><small>Te reto a jugar</small></div>
+            <div class="chat-item"><strong>Yami</strong><br><small>Tú: Holaaa :D</small></div>
+            <div class="chat-item"><strong>Sonia</strong><br><small>Visto</small></div>
+            <div class="chat-item"><strong>Jorge2</strong><br><small>Jugamos???</small></div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <section class="avatar">
+            <img src="imagenes/avatar.png" class="avatar-img" alt="Avatar">
+        </section>
+
+        <div class="menu-derecho">
+            <section class="botones">
+                <button class="btn btn-juego" onclick="window.location.href='selecciondenivel.html'">Jugar</button>
+                <button class="btn btn-juego" onclick="window.location.href='crearsala.html'">Crear sala</button>
+                <button class="btn btn-juego">Tienda</button>
+            </section>
+            <section class="pin">
+                <span class="pin-label">PIN</span>
+                <input type="text" id="pin-input" placeholder="_ _ _ _ _ _" maxlength="6">
+            </section>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="logros-box">
+            <span class="trofeo-icon">🏆</span>
+            <div class="info">
+                <small>LOGROS</small>
+                <strong id="logros-text">0 / 30</strong>
+            </div>
+        </div>
+        <div class="puntos-box">
+            <span class="estrella-icon">⭐</span>
+            <div class="info">
+                <small>PUNTOS</small>
+                <strong id="puntos-text">0</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JavaScript/menus.js"></script>
+</body>
+</html>
