@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #88cae9;
+}
+
+header {
+    position:absolute;
+    top:0em;
+    height: 3.5em;
+    width: 100%;
+    background-color: #09134d;
+}
+
+
+.flecha1{
+    position: absolute;
+    left: 1em;
+    top: 4.5em;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.flecha2{
+    position: absolute;
+    left: 95em;
+    top: 44em;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+.podio{
+    position: absolute;
+    left: 25em;
+    top: 6em;
+    width: 28em;
+    height: auto;
+}
+
+.subpodio1{
+    position: absolute;
+    left: 3.5em;
+    top: 30em;
+    width: 21.5em;
+    height: auto;
+}
+
+.subpodio2{
+    position: absolute;
+    left: 28.5em;
+    top: 30em;
+    width: 21.5em;
+    height: auto;
+}
+
+.subpodio3{
+    position: absolute;
+    left: 55em;
+    top: 30em;
+    width: 21.5em;
+    height: auto;
+}

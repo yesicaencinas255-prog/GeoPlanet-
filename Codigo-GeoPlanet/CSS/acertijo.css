@@ -1,0 +1,303 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-image: url("../imagenes/fondo_de_acertijos.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* --------------------------
+   BARRA SUPERIOR
+-------------------------- */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.8em;
+    background-color: #dcecf3;
+    border-bottom: 0.1em solid #8ab6c9;
+    z-index: 5;
+}
+
+
+/* GEO */
+
+.geo {
+    position: absolute;
+    left: 0.2em;
+    top: 0.1em;
+    background-color: #064477;
+    color: white;
+    font-size: 0.75em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+
+/* PLANET */
+
+.planet {
+    position: absolute;
+    left: 3em;
+    top: 0.1em;
+    color: #064477;
+    font-size: 0.75em;
+}
+
+
+/* X */
+
+.boton-salir {
+    position: absolute;
+    right: 0.2em;
+    top: 0.05em;
+    border: none;
+    background: transparent;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* --------------------------
+   BOTÓN IZQUIERDO
+-------------------------- */
+
+.boton-izquierda {
+    position: absolute;
+    left: 0.8em;
+    top: 2.3em;
+    width: 2.2em;
+    height: 2.2em;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.boton-izquierda img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* --------------------------
+   CRONÓMETRO
+-------------------------- */
+
+.cronometro {
+    position: absolute;
+    left: 41.5em;
+    transform: translateX(-50%);
+    top: 1em;
+    height: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.cronometro img {
+    width: 10em;
+    height: auto;
+}
+
+#tiempo {
+    position: relative;
+    font-size: 4em;
+    color: black;
+    font-weight: bold;
+    left: -2.2em;
+    z-index: -1;
+}
+
+
+/* --------------------------
+   LOGO GEO PLANET Y USUARIO
+-------------------------- */
+
+.logo {
+    position: absolute;
+    right: 5em;
+    top: 2.2em;
+    width: 4.5em;
+    height: auto;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.usuario {
+    position: absolute;
+    right: 1.2em;
+    top: 2.2em;
+    width: 3em;
+    height: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usuario img,
+.usuario svg {
+    width: 2.6em;
+    height: 2.6em;
+    object-fit: contain;
+}
+
+
+/* --------------------------
+   CAJA DE LA PREGUNTA
+-------------------------- */
+
+.pregunta {
+    position: absolute;
+    left: 50%;
+    top: 13em;
+    transform: translateX(-50%);
+    width: 35em;
+    min-height: 8em;
+    background-color: #ffd329;
+    border: 0.35em solid #5c3e00;
+    border-radius: 1.2em;
+    text-align: center;
+    padding: 0.8em 1.2em;
+    box-shadow: inset 0 0 0 0.15em #fff, 0 0.25em 0 #3a2600;
+}
+
+/* Título Acertijos */
+
+.pregunta h1 {
+    margin: 0;
+    font-size: 25m;
+    color: black;
+    font-weight: bold;
+}
+
+/* Texto de la pregunta */
+
+.pregunta p {
+    margin-top: 0.4em;
+    font-size: 1em;
+    line-height: 1.25em;
+    color: black;
+    font-weight: bold;
+}
+
+
+/* --------------------------
+   RESPUESTAS
+-------------------------- */
+
+.respuestas {
+    position: absolute;
+    left: 50%;
+    top: 25em;
+    transform: translateX(-50%);
+    width: 30em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5em;
+    row-gap: 0.8em;
+}
+
+/* Botones */
+
+.respuestas button {
+    width: 100%;
+    height: 2.2em;
+    background-color: #ffd329;
+    border: 0.25em solid #5c3e00;
+    border-radius: 0.8em;
+    font-size: 1em;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0.1em #fff, 0 0.2em 0 #3a2600;
+}
+
+/* Posición de las respuestas */
+
+#argentina {
+    grid-column: 1;
+}
+
+#bolivia {
+    grid-column: 2;
+}
+
+#chile {
+    grid-column: 1;
+}
+
+#venezuela {
+    grid-column: 2;
+}
+
+/* Efecto al pasar el mouse */
+
+.respuestas button:hover {
+    transform: scale(1.02);
+    background-color: #ffe36a;
+}
+
+
+/* --------------------------
+   RESPUESTA CORRECTA
+-------------------------- */
+
+.correcta {
+    background-color: #39d353 !important;
+    border-color: #087b25 !important;
+    color: white !important;
+    animation: brilloVerde 0.6s infinite alternate;
+}
+
+/* Brillo */
+
+@keyframes brilloVerde {
+    from {
+        box-shadow: 0 0 0.3em #00ff40;
+    }
+    to {
+        box-shadow: 0 0 1em #00ff40, 0 0 2em #00ff40;
+    }
+}
+
+
+/* --------------------------
+   BOTÓN DERECHO
+-------------------------- */
+
+.boton-derecha {
+    position: absolute;
+    right: 1em;
+    bottom: 0.8em;
+    width: 4em;
+    height: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.boton-derecha img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

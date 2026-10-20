@@ -1,0 +1,230 @@
+/* ==================================================
+   VARIABLES CSS
+   ================================================== */
+:root {
+  --azul-tab: #1B2A55;
+  --azul-tab-claro: #FFFFFF;
+  --blanco: #FFFFFF;
+  --negro: #1A1A1A;
+  --rojo-error: #FFD966; /* Amarillo/blanco legible sobre el fondo azul */
+  --verde-exito: #51CF66;
+}
+
+/* ==================================================
+   RESET Y FUENTE GENERAL
+   ================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==================================================
+   PANTALLA CON FONDO
+   ================================================== */
+.pantalla {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Permite adaptarse mejor si el contenido sobrepasa la pantalla */
+  overflow: hidden;
+
+  background-image: url("../imagenes/fondoregistro.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================================================
+   BARRA SUPERIOR (PESTAÑA GEO PLANET)
+   ================================================== */
+.barra-superior {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding-left: 1px; 
+}
+
+.pestana {
+  display: flex;
+  align-items: center;
+  padding: 2px 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pestana-geo {
+  background-color: var(--azul-tab);
+  color: var(--blanco);
+  border-bottom-right-radius: 8px;
+}
+
+.pestana-planet {
+  background-color: var(--azul-tab-claro);
+  color: #1A1A1A;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* ==================================================
+   BOTÓN VOLVER ATRÁS
+   ================================================== */
+.btn-volver {
+  position: absolute;
+  top: 45px;
+  left: 4px;
+  z-index: 30;
+
+  width: 38px;
+  height: 38px;
+  border: none;
+  background-color: transparent;
+
+  background-image: url("../imagenes/botondeatras.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.btn-volver:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.btn-volver:active {
+  transform: scale(0.92);
+}
+
+.flecha-volver {
+  display: none;
+}
+
+/* ==================================================
+   CONTENEDOR DEL FORMULARIO Y CENTRADO
+   ================================================== */
+.contenedor-formulario {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+}
+
+.formulario {
+  width: 100%;
+  max-width: 650px; 
+}
+
+/* ==================================================
+   GRID DE CAMPOS
+   ================================================== */
+.grid-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 80px; /* Separación limpia y proporcionada */
+  margin-bottom: 15px; 
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Etiquetas alineadas (corregido font-size) */
+.campo label {
+  font-size: 14px;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  margin-left: 4px;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* CASILLAS AMARILLAS - TEXTO CENTRADO Y DENTRO DEL MARCO */
+.campo input {
+  width: 100%;
+  height: 68px;
+  
+  /* PADDING CLAVE: 0 arriba/abajo, 32px a los lados para no tocar los bordes biselados */
+  padding: 0 32px; 
+  
+  font-size: 16px;
+  line-height: 55px; /* Iguala la altura para centrar el texto verticalmente */
+  outline: none;
+  color: #1A1A1A;
+  font-weight: 600;
+  border: none;
+
+  background-image: url("../imagenes/formulario.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+/* ==================================================
+   MENSAJE DE ERROR / ÉXITO
+   ================================================== */
+.mensaje {
+  text-align: center;
+  font-size: 14px;
+  min-height: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.mensaje.error {
+  color: #FFD966;
+}
+
+.mensaje.exito {
+  color: var(--verde-exito);
+}
+
+/* ==================================================
+   BOTÓN CREAR
+   ================================================== */
+.contenedor-boton-crear {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-crear {
+  width: 150px;
+  height: 48px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1A1A1A; /* Texto oscuro para legibilidad sobre el botón amarillo */
+  cursor: pointer;
+  border: none;
+
+  background-image: url("../imagenes/formulario.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.btn-crear:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.btn-crear:active {
+  transform: scale(0.95);
+}

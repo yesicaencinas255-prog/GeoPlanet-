@@ -1,0 +1,102 @@
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            /* Ruta de la imagen de fondo */
+            background-image: url('../imagenes/fondonivelcon.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Botón de flecha atrás en la esquina superior izquierda */
+        .btn-atras {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-atras img {
+            width: 45px;
+            height: 45px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-atras img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contenedor principal de niveles */
+        .contenedor-niveles {
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Estilo base de los cuadros de nivel */
+        .card-nivel {
+            background: rgba(30, 60, 90, 0.65);
+            backdrop-filter: blur(5px);
+            border-radius: 25px;
+            width: 260px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .titulo-nivel {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        /* Botón Jugar (Nivel 1) */
+        .btn-jugar {
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 35px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.2s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn-jugar:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        /* Elementos Nivel 2 (Bloqueado) */
+        .icono-candado {
+            width: 90px;
+            height: 90px;
+            margin-top: 10px;
+        }
+
+        .btn-bloqueado {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #d0d0d0;
+            padding: 10px 30px;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: not-allowed;
+            user-select: none;
+        }

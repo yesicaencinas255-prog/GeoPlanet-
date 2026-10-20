@@ -1,0 +1,451 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN BASE Y RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../imagenes/Fondo_Principal_donde_esta_todo_el_menu_tmb.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #ffffff;
+}
+
+/* Evita distorsión en todas las imágenes */
+img {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+/* ==========================================================================
+   2. BARRA SUPERIOR (HEADER)
+   ========================================================================== */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Botón de Ajustes (Evita deformaciones usando aspect-ratio fijo) */
+button.ajustes {
+    background: linear-gradient(180deg, #ffd84d 0%, #ff8c00 100%);
+    border: 3px solid #3b1d00;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    flex-shrink: 0;
+}
+
+button.ajustes:hover {
+    transform: scale(1.08) rotate(30deg);
+    filter: brightness(1.1);
+}
+
+button.ajustes:active {
+    transform: scale(0.95);
+}
+
+button.ajustes img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   3. REPRODUCCIÓN FIEL DE LA TARJETA EXPLORADOR (NIVEL Y PUNTOS)
+   ========================================================================== */
+.explorador-card {
+    background: linear-gradient(180deg, #2a1508 0%, #120803 100%);
+    border: 3px solid #b87a28;
+    box-shadow: inset 0 0 0 2px #4a290a, 0 6px 12px rgba(0,0,0,0.6);
+    border-radius: 28px;
+    padding: 6px 12px 6px 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 360px;
+    height: 68px;
+    position: relative;
+}
+
+/* Planeta a la izquierda */
+.planeta-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 3px solid #d4a038;
+    background: #0f1c2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.planeta-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Información central */
+.explorador-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rank-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.level-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffb400;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+/* Barra de progreso de XP */
+.progress-bar-container {
+    background: #140b05;
+    border: 2px solid #523412;
+    border-radius: 12px;
+    height: 18px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar-fill {
+    background: linear-gradient(180deg, #ffea00 0%, #ff9000 100%);
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.8);
+}
+
+.xp-text {
+    position: absolute;
+    right: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+/* Placa con Estrella a la derecha */
+.star-badge {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(180deg, #42280e 0%, #241304 100%);
+    border: 2px solid #d4a038;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 4px rgba(255, 204, 0, 0.3);
+}
+
+/* ==========================================================================
+   4. LOGO Y USUARIO (TOP RIGHT)
+   ========================================================================== */
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logomenu {
+    height: 75px;
+    width: auto;
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.5));
+}
+
+.cuenta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(20, 15, 38, 0.8);
+    border: 2px solid #ffcc00;
+    padding: 6px 14px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cuenta-container:hover {
+    transform: scale(1.05);
+}
+
+.cuenta {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.cuenta-container span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffeb7b;
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   5. CHAT LATERAL
+   ========================================================================== */
+.chat-panel {
+    position: absolute;
+    left: 20px;
+    top: 125px;
+    width: 250px;
+    height: calc(100vh - 165px);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    border: 3px solid #281a45;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 5;
+    color: #333;
+}
+
+.chat-header {
+    background: linear-gradient(180deg, #4c2b85 0%, #29144d 100%);
+    color: white;
+    padding: 10px 14px;
+    border-bottom: 3px solid #ffcc00;
+}
+
+.chat-header h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.buscar-amigo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buscar-amigo button {
+    background: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #555;
+    cursor: pointer;
+}
+
+.buscar-amigo .usuarios {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid #ffcc00;
+}
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat-item {
+    background: #f0eaff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border-left: 4px solid #6b3ba7;
+}
+
+/* ==========================================================================
+   6. CONTENIDO PRINCIPAL, MENÚ DERECHO Y FOOTER
+   ========================================================================== */
+main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.avatar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.avatar-img {
+    max-height: 68vh;
+    width: auto;
+}
+
+.menu-derecho {
+    position: absolute;
+    right: 35px;
+    top: 38%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-end;
+    z-index: 5;
+}
+
+.botones {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-juego {
+    background: linear-gradient(180deg, #ffe600 0%, #ff9900 100%);
+    border: 3px solid #3b1d00;
+    color: #2b1100;
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 12px 24px;
+    border-radius: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 5px 0px #994c00, 0 8px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.1s;
+}
+
+.btn-juego:hover {
+    transform: translateY(-2px);
+}
+
+.pin {
+    background: linear-gradient(180deg, #2d1854 0%, #170b2e 100%);
+    border: 3px solid #ffcc00;
+    border-radius: 16px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.pin-label {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffcc00;
+}
+
+.pin input {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #5d389b;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 6px;
+    width: 100%;
+    text-align: center;
+    outline: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 25px;
+    right: 35px;
+    display: flex;
+    gap: 12px;
+    z-index: 5;
+}
+
+.logros-box, .puntos-box {
+    background: rgba(22, 13, 38, 0.85);
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.trofeo-icon, .estrella-icon {
+    font-size: 1.5rem;
+}
+
+.info small {
+    color: #a892ee;
+    font-size: 0.6rem;
+    font-weight: 800;
+}
+
+.info strong {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+ button.ajustes {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+button.ajustes img {
+    width: 100%;
+    height: 100%;
+    max-width: 45px;  /* Ajusta este valor si deseas cambiar el tamaño general del botón */
+    max-height: 45px;
+    object-fit: contain; /* Garantiza que la imagen encaje bien sin deformarse */
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+button.ajustes img:hover {
+    transform: scale(1.08); /* Efecto de aumento al pasar el mouse */
+}
