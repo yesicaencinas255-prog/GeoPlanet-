@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    background-color: #3da9d8;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ENCABEZADO */
+
+header {
+    height: 5em;
+    background-color: #064477;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 8px #555;
+}
+
+
+/* Botón volver */
+
+.flecha {
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+
+/* Icono de perfil */
+
+.icono-perfil {
+    position: absolute;
+    left: 7em;
+    top: 0.5em;
+}
+
+
+/* Título */
+
+.titulo {
+    position: absolute;
+    left: 6em;
+    top: 0.55em;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+/* Logo */
+
+.logo {
+    position: absolute;
+    right: 6em;
+    top: -0.5em;
+}
+
+
+/* FORMULARIO */
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+.editar {
+    width: 30em;
+    max-width: 92%;
+    margin: 2em 0;
+    text-align: center;
+}
+
+
+/* Avatar */
+
+.avatar {
+    width: 9em;
+    height: 9em;
+    margin: auto;
+    background-color: #064477;
+    border: 0.3em solid #f5bd00;
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Botones de la foto */
+
+.botones-foto {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+
+/* CAMPOS */
+
+.campo {
+    margin-top: 1.2em;
+    text-align: left;
+}
+
+
+.campo label {
+    display: block;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+
+.campo input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.7em 1em;
+
+    background-color: #ffd329;
+    border: 0.2em solid #a67800;
+    border-radius: 1em;
+    box-shadow: 0 3px 4px #777;
+
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.campo input::placeholder {
+    color: #8a6a00;
+    font-weight: normal;
+}
+
+
+.campo input:focus {
+    outline: none;
+    background-color: #ffe066;
+    border-color: #064477;
+}
+
+
+/* Contraseña con ojo */
+
+.con-ojo {
+    position: relative;
+}
+
+
+.con-ojo input {
+    padding-right: 3em;
+}
+
+
+.ojo {
+    position: absolute;
+    right: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+
+/* Mensajes */
+
+.error {
+    color: #ffd0d0;
+    background-color: #8b1a1a;
+    border-radius: 0.6em;
+    padding: 0.3em 0.8em;
+    margin: 0.4em 0 0;
+    font-size: 0.9em;
+    display: none;
+}
+
+
+.error.visible {
+    display: block;
+}
+
+
+.ayuda {
+    color: white;
+    font-size: 0.9em;
+    margin-top: 1em;
+}
+
+
+.mensaje {
+    min-height: 1.2em;
+    margin: 0.8em 0 0;
+    font-weight: bold;
+    color: white;
+}
+
+
+.mensaje.ok {
+    color: #d6ffd6;
+}
+
+
+.mensaje.mal {
+    color: #ffd0d0;
+}
+
+
+/* BOTONES */
+
+.botones {
+    margin-top: 1.5em;
+
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+
+.botones button,
+.botones-foto button {
+    width: 11em;
+    height: 3em;
+
+    background-color: #ffd329;
+    border: 0.2em solid #a67800;
+    border-radius: 1em;
+
+    font-size: 1em;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.botones button:hover,
+.botones-foto button:hover {
+    background-color: #f5bd00;
+}

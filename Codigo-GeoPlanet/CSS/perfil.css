@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    background-color: #3da9d8;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ENCABEZADO */
+
+header {
+    height: 5em;
+    background-color: #064477;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 3px 8px #555;
+}
+
+
+/* Botón volver */
+
+.flecha {
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+
+/* Icono de perfil */
+
+.icono-perfil {
+    position: absolute;
+    left: 7em;
+    top: 0.5em;
+}
+
+
+/* Título */
+
+.titulo {
+    position: absolute;
+    left: 6em;
+    top: 0.55em;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+/* Logo */
+
+.logo {
+    position: absolute;
+    right: 6em;
+    top: -0.5em;
+}
+
+
+/* PERFIL */
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+.perfil {
+    width: 55em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+
+/* Avatar */
+
+.avatar {
+    width: 9em;
+    height: 9em;
+    margin: auto;
+    background-color: #064477;
+    border: 0.3em solid #f5bd00;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.avatar img {
+    width: 7em;
+}
+
+
+/* Nombre */
+
+h1 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 0.2em;
+}
+
+
+.nivel {
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+
+/* EXPERIENCIA */
+
+.experiencia {
+    width: 30em;
+    height: 1.3em;
+    margin: auto;
+    background-color: white;
+    border: 0.2em solid #9b7200;
+    border-radius: 1em;
+}
+
+
+.barra-experiencia {
+    width: 75%;
+    height: 100%;
+    background-color: #f5bd00;
+    border-radius: 1em;
+}
+
+
+.xp {
+    color: white;
+    font-size: 1em;
+}
+
+
+/* INFORMACIÓN */
+
+.informacion {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+
+.dato {
+    width: 9em;
+    height: 5.5em;
+    background-color: #ffd329;
+    border: 0.2em solid #a67800;
+    border-radius: 1em;
+    box-shadow: 0 3px 4px #777;
+}
+
+
+.dato h2 {
+    font-size: 1em;
+    margin-bottom: 0.3em;
+}
+
+
+.dato p {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 0.3em;
+}
+
+
+/* BOTONES */
+
+.botones {
+    margin-top: 1.5em;
+
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+
+.botones button {
+    width: 11em;
+    height: 3em;
+
+    background-color: #ffd329;
+    border: 0.2em solid #a67800;
+    border-radius: 1em;
+
+    font-size: 1em;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.botones button:hover {
+    background-color: #f5bd00;
+}

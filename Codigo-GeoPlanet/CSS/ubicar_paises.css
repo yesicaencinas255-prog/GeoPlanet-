@@ -1,0 +1,442 @@
+/* ==========================================
+   1. CONFIGURACIÓN GENERAL Y VARIABLES
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    /* RUTA DE IMAGEN: Fondo general */
+    background: url("../imagenes/fondo_de_acertijos.png") no-repeat center center / cover #4ca3e6;
+}
+
+/* ==========================================
+   2. BARRA SUPERIOR Y NAVEGACIÓN
+   ========================================== */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.8em;
+    background-color: #dcecf3;
+    border-bottom: 0.1em solid #8ab6c9;
+    z-index: 5;
+}
+
+.geo {
+    position: absolute;
+    left: 0.2em;
+    top: 0.1em;
+    background-color: #064477;
+    color: white;
+    font-size: 0.75em;
+    padding: 0 0.3em;
+}
+
+.planet {
+    position: absolute;
+    left: 3em;
+    top: 0.1em;
+    color: #064477;
+    font-size: 0.75em;
+}
+
+.boton-salir {
+    position: absolute;
+    right: 0.2em;
+    top: 0.05em;
+    border: none;
+    background: transparent;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-izquierda {
+    position: absolute;
+    left: 0.8em;
+    top: 2.3em;
+    width: 4em;
+    height: 2.2em;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.boton-derecha img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.boton-derecha {
+    position: absolute;
+    right: 1em;
+    bottom: 0.8em;
+    width: 4em;
+    height: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* ==========================================
+   3. ENCABEZADO Y CRONÓMETRO
+   ========================================== */
+.pregunta {
+    position: absolute;
+    left: 50%;
+    top: 2.5em;
+    transform: translateX(-50%);
+    width: 35em;
+    min-height: 4em;
+    background-color: #ffd329;
+    border: 0.35em solid #5c3e00;
+    border-radius: 1.2em;
+    text-align: center;
+    padding: 0.5em 1.2em;
+    box-shadow: inset 0 0 0 0.15em #fff, 0 0.25em 0 #3a2600;
+    z-index: 5;
+}
+
+.pregunta h1 {
+    font-size: 1.2em;
+    color: black;
+    font-weight: bold;
+}
+
+.pregunta p {
+    margin-top: 0.2em;
+    font-size: 1em;
+    line-height: 1.25em;
+    color: black;
+    font-weight: bold;
+}
+
+.cronometro {
+    position: absolute;
+    left: 12em;
+    top: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    z-index: 10;
+}
+
+.cronometro img {
+    width: 5em;
+    height: auto;
+}
+
+#tiempo {
+    font-size: 2.5em;
+    color: black;
+    font-weight: bold;
+}
+
+/* ==========================================
+   4. ESTRUCTURA PRINCIPAL DEL JUEGO
+   ========================================== */
+.main-content {
+    position: absolute;
+    top: 8em;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 8em);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 2em;
+}
+
+/* ==========================================
+   5. POSICIONAMIENTO GEOGRÁFICO DE PAÍSES (MAPA)
+   ========================================== */
+.map-container {
+    width: 26em;
+    height: 33em;
+    position: relative;
+}
+
+.country-path {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.country-path:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.5)) brightness(1.1);
+    z-index: 25;
+}
+
+/* Posiciones exactas ajustadas para el mapa de Sudamérica */
+
+#path-venezuela {
+    top: 5.4em;
+    left: 16.2em;
+    width: 7em;
+    height: auto;
+    z-index: 2.5;
+    rotate: 8deg;
+}
+
+#path-colombia {
+    top: 5em;
+    left: 14em;
+    width: 6em;
+    height: auto;
+    z-index: 3;
+    rotate: 8deg;
+}
+
+#path-ecuador {
+    top: 6.3em;
+    left: 12.3em;
+    width: 4em;
+    height: auto;
+    z-index: 4;
+    rotate: -6deg;
+}
+
+#path-peru {
+    top: 8em;
+    left: 12em;
+    width: 7em;
+    height: auto;
+    z-index: 1;
+    rotate: -9deg;
+}
+
+#path-brazil {
+    top: 8.2em;
+    left: 17.2em;
+    width: 12.7em;
+    height: auto;
+    z-index: 2;
+    rotate: 0deg;
+}
+
+#path-bolivia {
+    top: 12.2em;
+    left: 17.2em;
+    width: 4.9em;
+    height: auto;
+    z-index: 2;
+    rotate: -20deg;
+}
+
+#path-paraguay {
+    top: 15em;
+    left: 20.3em;
+    width: 3.5em;
+    height: auto;
+    z-index: 3;
+    rotate: -5.5deg;
+} 
+
+#path-chile {
+    top: 15.1em;
+    left: 17.1em;
+    width: 3em;
+    height: auto;
+    z-index: 3;
+    rotate: -10deg;
+}
+
+#path-argentina {
+    top: 16.4em;
+    left: 17.8em;
+    width: 7.12em;
+    height: auto;
+    z-index: 2;
+    rotate: -9deg;
+}
+
+#path-uruguay {
+    top: 18.92em;
+    left: 22.2em;
+    width: 3em;
+    height: auto;
+    z-index: 2;
+    rotate: 8.5deg;
+}
+
+/* Capa y marcadores (pines / miras) */
+.markers-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 30;
+}
+
+.target-marker {
+    position: absolute;
+    width: 1.8em;
+    height: 1.8em;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.target-marker.correcta-mira {
+    background-color: rgba(57, 211, 83, 0.9);
+    border: 0.15em solid #ffffff;
+    color: #ffffff;
+}
+
+.target-marker.incorrecta-mira {
+    background-color: rgba(231, 76, 60, 0.9);
+    border: 0.15em solid #ffffff;
+    color: #ffffff;
+}
+
+.target-marker.missed-mira {
+    background-color: rgba(241, 196, 15, 0.9);
+    border: 0.15em solid #ffffff;
+    color: #000000;
+}
+
+/* ==========================================
+   6. PANEL DE OPCIONES / RESPUESTAS
+   ========================================== */
+.respuestas {
+    width: 18em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.respuestas button {
+    width: 100%;
+    height: 3em;
+    background-color: #ffffff;
+    border: 0.25em solid #5c3e00;
+    border-radius: 0.8em;
+    font-size: 1.1em;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0.1em #fff, 0 0.2em 0 #3a2600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 1em;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.respuestas button:hover {
+    transform: scale(1.02);
+    background-color: #ffe36a;
+}
+
+.respuestas button.seleccionada {
+    background-color: #ffd329;
+    border-color: #064477;
+}
+
+.pin-img {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+}
+
+/* Estado de validación en opciones */
+.correcta {
+    background-color: #39d353 !important;
+    border-color: #087b25 !important;
+    color: white !important;
+    animation: brilloVerde 0.6s infinite alternate;
+}
+
+.incorrecta {
+    background-color: #e74c3c !important;
+    border-color: #962d22 !important;
+    color: white !important;
+}
+
+@keyframes brilloVerde {
+    from {
+        box-shadow: 0 0 0.3em #00ff40;
+    }
+    to {
+        box-shadow: 0 0 1em #00ff40, 0 0 2em #00ff40;
+    }
+}
+
+/* ==========================================
+   7. MODAL DE RESULTADOS
+   ========================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-card {
+    background-color: #ffd329;
+    border: 0.35em solid #5c3e00;
+    border-radius: 1.2em;
+    padding: 1.5em;
+    text-align: center;
+    max-width: 22em;
+    width: 90%;
+    box-shadow: inset 0 0 0 0.15em #fff, 0 0.25em 0 #3a2600;
+}
+
+.modal-title {
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    color: #000;
+}
+
+.modal-message {
+    font-size: 1em;
+    margin-bottom: 1em;
+    color: #000;
+    font-weight: bold;
+}
+
+.modal-details {
+    font-size: 0.85em;
+    text-align: left;
+    background-color: #fff;
+    padding: 0.6em;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    max-height: 8em;
+    overflow-y: auto;
+    border: 0.1em solid #5c3e00;
+}
