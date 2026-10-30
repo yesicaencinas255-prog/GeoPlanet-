@@ -7,11 +7,7 @@ function editarPerfil() {
 }
 
 function inventario() {
-    window.location.href = "inventario.html";
-}
-
-function logros() {
-    window.location.href = "logros.html";
+    window.location.href = "Tienda/tienda.html";
 }
 
 function cerrarSesion() {
