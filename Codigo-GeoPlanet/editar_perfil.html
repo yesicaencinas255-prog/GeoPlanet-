@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geo Planet - Editar perfil</title>
+    <link rel="stylesheet" href="CSS/editar_perfil.css">
+</head>
+
+<body>
+
+    <header>
+
+        <button onclick="volverAlPerfil()" class="flecha">
+            <img src="imagenes/flecha_para_ir_atras.png" width="50" alt="Volver">
+        </button>
+
+        <img src="imagenes/usuario.png" class="icono-perfil" width="65" alt="Perfil">
+
+        <div class="titulo">
+            Editar perfil
+        </div>
+
+        <img src="imagenes/geoplanetlogo.png" class="logo" width="150" alt="Geo Planet">
+
+    </header>
+
+
+    <main>
+
+        <form class="editar" id="formEditar" autocomplete="off" novalidate>
+
+            <!-- Foto de perfil -->
+            <div class="avatar">
+                <img src="imagenes/usuario.png" id="vistaPrevia" alt="Foto de perfil">
+            </div>
+
+            <div class="botones-foto">
+                <button type="button" id="btnCambiarFoto">📷 Cambiar foto</button>
+                <button type="button" id="btnQuitarFoto">🗑️ Quitar foto</button>
+            </div>
+
+            <input type="file" id="inputFoto" accept="image/*" hidden>
+            <p class="mensaje" id="mensajeFoto"></p>
+
+
+            <!-- Nombre -->
+            <div class="campo">
+                <label for="nombre">👤 Nombre de usuario</label>
+                <input type="text" id="nombre" maxlength="20" placeholder="Tu nombre">
+                <p class="error" id="errorNombre"></p>
+            </div>
+
+
+            <!-- Contraseña -->
+            <div class="campo" id="campoActual">
+                <label for="claveActual">🔒 Contraseña actual</label>
+                <div class="con-ojo">
+                    <input type="password" id="claveActual" placeholder="Contraseña actual">
+                    <button type="button" class="ojo" data-objetivo="claveActual" aria-label="Mostrar contraseña">👁️</button>
+                </div>
+                <p class="error" id="errorActual"></p>
+            </div>
+
+            <div class="campo">
+                <label for="claveNueva">🔑 Nueva contraseña</label>
+                <div class="con-ojo">
+                    <input type="password" id="claveNueva" placeholder="Mínimo 6 caracteres">
+                    <button type="button" class="ojo" data-objetivo="claveNueva" aria-label="Mostrar contraseña">👁️</button>
+                </div>
+                <p class="error" id="errorNueva"></p>
+            </div>
+
+            <div class="campo">
+                <label for="claveRepetir">🔑 Repetir nueva contraseña</label>
+                <div class="con-ojo">
+                    <input type="password" id="claveRepetir" placeholder="Repetí la contraseña">
+                    <button type="button" class="ojo" data-objetivo="claveRepetir" aria-label="Mostrar contraseña">👁️</button>
+                </div>
+                <p class="error" id="errorRepetir"></p>
+            </div>
+
+            <p class="ayuda">Dejá los campos de contraseña vacíos si no querés cambiarla.</p>
+
+
+            <!-- Botones -->
+            <div class="botones">
+                <button type="submit">💾 Guardar cambios</button>
+                <button type="button" onclick="volverAlPerfil()">↩️ Cancelar</button>
+            </div>
+
+            <p class="mensaje" id="mensajeGeneral"></p>
+
+        </form>
+
+    </main>
+
+    <script src="JavaScript/editar_perfil.js"></script>
+
+</body>
+
+</html>

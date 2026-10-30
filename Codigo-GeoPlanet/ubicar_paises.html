@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEO Planet - Juego de Ubicación</title>
+  <link rel="stylesheet" href="CSS/ubicar_paises.css">
+</head>
+<body class="body-game">
+
+  <!-- BARRA SUPERIOR -->
+  <header>
+    <span class="geo">GEO</span>
+    <span class="planet">Planet</span>
+    <button class="boton-salir" id="closeBtn">X</button>
+  </header>
+
+  <!-- BOTÓN IZQUIERDO (VOLVER ATRÁS) -->
+  <button class="boton-izquierda" id="backBtn">
+    <!-- RUTA DE IMAGEN: Coloca la imagen de tu botón aquí -->
+    <img src="imagenes/flecha_para_ir_atras.png" alt="Atrás" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+    <span style="display:none; font-size:1.5em; color:white;">◀</span>
+  </button>
+
+  <!-- CRONÓMETRO -->
+  <div class="cronometro">
+    <!-- RUTA DE IMAGEN: Coloca la imagen del reloj/cronómetro aquí -->
+    <img src="imagenes/cronometro.png" alt="Reloj" onerror="this.style.display='none';">
+    <span id="tiempo">00:10</span>
+  </div>
+
+  <!-- CAJA DE LA PREGUNTA / TÍTULO -->
+  <div class="pregunta">
+    <h1>GEO Planet</h1>
+    <p>Selecciona la ubicación del país</p>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL (MAPA A LA IZQUIERDA Y OPCIONES A LA DERECHA) -->
+  <main class="main-content">
+
+    <!-- MAPA INTERACTIVO CON IMÁGENES -->
+    <div class="map-container" id="mapContainer">
+      <img src="imagenes/venezuela.png" alt="Venezuela" id="path-venezuela" class="country-path" data-country="venezuela">-
+      <img src="imagenes/colombia.png" alt="Colombia" id="path-colombia" class="country-path" data-country="colombia">
+      <img src="imagenes/ecuador.png" alt="Ecuador" id="path-ecuador" class="country-path" data-country="ecuador">
+      <img src="imagenes/peru.png" alt="Perú" id="path-peru" class="country-path" data-country="peru">
+      <img src="imagenes/brazil.png" alt="Brasil" id="path-brazil" class="country-path" data-country="brazil">
+      <img src="imagenes/bolivia.png" alt="Bolivia" id="path-bolivia" class="country-path" data-country="bolivia">
+      <img src="imagenes/paraguay.png" alt="Paraguay" id="path-paraguay" class="country-path" data-country="paraguay"> 
+      <img src="imagenes/chile.png" alt="Chile" id="path-chile" class="country-path" data-country="chile">
+      <img src="imagenes/argentina.png" alt="Argentina" id="path-argentina" class="country-path" data-country="argentina">
+      <img src="imagenes/uruguay.png" alt="Uruguay" id="path-uruguay" class="country-path" data-country="uruguay">
+
+      <!-- Capa para las miras/pines de ubicación -->
+      <div class="markers-layer" id="markersLayer"></div>
+    </div>
+
+    <!-- RESPUESTAS / OPCIONES A LA DERECHA -->
+    <div class="respuestas" id="optionsContainer">
+      <button id="brazil" class="option-card" data-country="brazil">
+        <!-- RUTA DE IMAGEN: Icono del pin de ubicación -->
+        <img src="imagenes/pin.png" class="pin-img" alt="Pin" onerror="this.style.display='none';"> 
+        <span>Brazil</span>
+      </button>
+
+      <button id="venezuela" class="option-card" data-country="venezuela">
+        <img src="imagenes/pin.png" class="pin-img" alt="Pin" onerror="this.style.display='none';"> 
+        <span>Venezuela</span>
+      </button>
+
+      <button id="peru" class="option-card" data-country="peru">
+        <img src="imagenes/pin.png" class="pin-img" alt="Pin" onerror="this.style.display='none';"> 
+        <span>Perú</span>
+      </button>
+
+      <button id="paraguay" class="option-card" data-country="paraguay">
+        <img src="imagenes/pin.png" class="pin-img" alt="Pin" onerror="this.style.display='none';"> 
+        <span>Paraguay</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- BOTÓN DERECHO -->
+  <button class="boton-derecha" id="nextBtn">
+    <!-- RUTA DE IMAGEN: Coloca la imagen de tu botón derecho aquí -->
+    <img src="imagenes/boton_siguiente.png" alt="Siguiente" onerror="this.style.display='none';">
+  </button>
+
+  <!-- VENTANA MODAL DE RESULTADOS -->
+  <div class="modal-overlay" id="resultModal">
+    <div class="modal-card">
+      <h2 class="modal-title" id="modalTitle">¡Resultado!</h2>
+      <p class="modal-message" id="modalMessage"></p>
+      <div class="modal-details" id="modalDetails"></div>
+      <p class="modal-message" style="color: #064477; margin-top: 0.8em; font-size: 0.9em;">
+        Avanzando en <span id="cuentaRegresiva">5</span>s...
+      </p>
+    </div>
+  </div>
+
+  <script src="JavaScript/ubicar_paises.js"></script>
+</body>
+</html>

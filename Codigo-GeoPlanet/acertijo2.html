@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Geo Planet - Nivel 1</title>
+    <link rel="stylesheet" href="CSS/acertijo.css">
+</head>
+
+<body>
+
+    <header>
+
+        <button class="boton-salir" onclick="salir()">
+            X
+        </button>
+
+        <div class="geo">
+            GEO
+        </div>
+
+        <div class="planet">
+            Planet
+        </div>
+
+    </header>
+
+
+    <!-- Cronómetro -->
+
+    <div class="cronometro">
+
+        <img src="imagenes/reloj.png" alt="Reloj">
+
+        <span id="tiempo">00:25</span>
+
+    </div>
+
+
+    <!-- Logo -->
+
+    <div class="logo">
+        <img src="imagenes/geoplanetlogo.png" >
+    </div>
+
+
+    <!-- Usuario -->
+
+    <div class="usuario">
+
+        <img src="imagenes/usuario.png">
+
+    </div>
+
+
+    <!-- Pregunta -->
+
+    <div class="pregunta">
+
+        <h1>Aciertos</h1>
+
+        <p>
+            Del tango rioplatense soy la cuna y el hogar
+            <br>
+            y un Obelisco blanco tenga para festejar
+        </p>
+
+    </div>
+
+
+    <!-- Respuestas -->
+
+    <div class="respuestas">
+
+        <button id="argentina" onclick="responder('Argentina')">
+            Argentina
+        </button>
+
+        <button id="bolivia" onclick="responder('Bolivia')">
+            Bolivia
+        </button>
+
+        <button id="chile" onclick="responder('Chile')">
+            Chile
+        </button>
+
+        <button id="venezuela" onclick="responder('Venezuela')">
+            Venezuela
+        </button>
+
+    </div>
+
+
+    <!-- Botón siguiente -->
+
+    <button class="boton-derecha" onclick="siguienteNivel()">
+        <img src="imagenes/flecha_para_ir_atras.png">
+    </button>
+
+
+    <!-- JavaScript externo -->
+
+    <script src="JavaScript/acertijo.js"></script>
+
+</body>
+
+</html>

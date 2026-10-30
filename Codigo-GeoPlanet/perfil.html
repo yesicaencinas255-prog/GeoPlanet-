@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Geo Planet - Perfil</title>
+    <link rel="stylesheet" href="CSS/perfil.css">
+</head>
+
+<body>
+
+    <script src="JavaScript/perfil.js"></script>
+    <header>
+
+        <button onclick="irAmenu()" class="flecha">
+            <img src="imagenes/flecha_para_ir_atras.png" width="50" alt="Volver">
+        </button>
+
+        <img src="imagenes/usuario.png" class="icono-perfil" width="65" alt="Perfil">
+
+        <div class="titulo">
+            Perfil
+        </div>
+
+        <img src="imagenes/geoplanetlogo.png" class="logo" width="150" alt="Geo Planet">
+
+    </header>
+
+
+    <main>
+
+        <div class="perfil">
+
+            <!-- Avatar -->
+            <div class="avatar">
+                <img src="imagenes/usuario.png" width="130" alt="Avatar">
+            </div>
+
+            <!-- Nombre -->
+            <h1>Usuario</h1>
+
+            <p class="nivel">Nivel 5</p>
+
+            <!-- Barra de experiencia -->
+            <div class="experiencia">
+                <div class="barra-experiencia"></div>
+            </div>
+
+            <p class="xp">750 / 1000 XP</p>
+
+
+            <!-- Información del jugador -->
+            <div class="informacion">
+
+                <div class="dato">
+                    <h2>🌎 País</h2>
+                    <p>Argentina</p>
+                </div>
+
+                <div class="dato">
+                    <h2>🎮 Partidas</h2>
+                    <p>6</p>
+                </div>
+
+                <div class="dato">
+                    <h2>🥇 Victorias</h2>
+                    <p>2</p>
+                </div>
+
+            </div>
+
+
+            <!-- Botones -->
+            <div class="botones">
+
+                <button onclick="editarPerfil()">
+                    ✏️ Editar perfil
+                </button>
+
+                <button onclick="inventario()">
+                    👔 Skins
+                </button>
+                <button onclick="cerrarSesion()">
+                    🚪 Cerrar sesión
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>
