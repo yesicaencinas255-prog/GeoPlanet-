@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Evita cualquier scroll global en la página */
+  font-family: 'Segoe UI', Verdana, sans-serif;
+  background: #0a0e1a;
+}
+
+.pantalla-juego {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== BARRA MINI ===== */
+.barra-mini {
+  background: #80b6f3;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.mini-item:nth-child(1) {
+  color: #000000;
+}
+
+.mini-item:nth-child(2) {
+  color: #ffffff;
+}
+
+/* ===== BARRA PRINCIPAL ===== */
+.barra-principal {
+  background: linear-gradient(180deg, #16305c 0%, #0d1f42 100%);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  border-bottom: 2px solid #0a1730;
+  flex-shrink: 0;
+}
+
+.grupo-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.boton-atras {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.boton-atras:hover {
+  transform: scale(1.08);
+  opacity: 0.85;
+}
+
+.boton-atras img {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.icono-cofre {
+  height: 45px;
+  width: auto;
+}
+
+.titulo-pantalla {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.grupo-derecha {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-juego {
+  height: 50px;
+  width: auto;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icono-usuario {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+.texto-usuario {
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ===== ESCENA PRINCIPAL (ÚNICA) ===== */
+.escena {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(img2/Fondo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Mantener todo dentro del marco de juego */
+}
+
+/* ===== PANEL DESLIZABLE DE TARJETAS ===== */
+.panel-tarjetas {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 340px;
+  max-height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 10px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+  z-index: 5;
+}
+
+.panel-tarjetas::-webkit-scrollbar {
+  width: 6px;
+}
+
+.panel-tarjetas::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+/* TARJETAS DE TRAJES */
+.tarjeta {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  backdrop-filter: blur(4px);
+  /* AJUSTE DE IMÁGENES DENTRO DE LAS TARJETAS */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Mantiene la proporción sin deformar */
+  padding: 9px;        /* Da un margen parejo alrededor de cada vestido */
+
+}
+
+.tarjeta:hover {
+  transform: scale(1.04);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tarjeta img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+/* ===== CONTENEDOR PERSONAJE Y PODIO ===== */
+.contenedor-personaje {
+  position: absolute;
+  right: 20%;
+  bottom: 10%;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 8;
+}
+
+.podio {
+  width: 400px;
+  height: 300px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.4));
+}
+
+/* CLASE BASE DEL PERSONAJE */
+.personaje {
+  display: block;
+  position: absolute;
+  width: 277px; /* Tamaño normal para que entre entero */
+  height: auto;
+  bottom: 110px; /* Ajuste para que los pies apoyen sobre el podio */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+/* ===== AJUSTES DE TAMAÑO POR PAÍS ===== */
+.personaje-argentina { width: 220px; }
+.personaje-bolivia   { width: 185px; }
+.personaje-brazil    { width: 220px; }
+.personaje-chile     { width: 183px; }
+.personaje-colombia  { width: 205px; }
+.personaje-ecuador   { width: 195px; }
+.personaje-paraguay  { width: 186px; }
+.personaje-peru      { width: 190px; }
+.personaje-uruguay   { width: 179px; }
+.personaje-venezuela { width: 195px; }
