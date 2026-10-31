@@ -1,0 +1,286 @@
+/* ===== RESET GENERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+  background: #0a0e1a;
+}
+
+.pantalla-juego {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Ocultamos la barra mini para evitar conflictos */
+.barra-mini {
+  display: none;
+}
+
+/* ===== BARRA PRINCIPAL ===== */
+.barra-principal {
+  background: linear-gradient(180deg, #16305c 0%, #0d1f42 100%);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  border-bottom: 2px solid #0a1730;
+  flex-shrink: 0;
+  height: 75px;
+}
+
+.grupo-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.boton-atras {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.boton-atras:hover {
+  transform: scale(1.08);
+  opacity: 0.85;
+}
+
+.boton-atras img {
+  height: 35px;
+  width: auto;
+  display: block;
+}
+
+.icono-cofre {
+  height: 48px;
+  width: auto;
+}
+
+.titulo-pantalla {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.grupo-derecha {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-juego {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icono-usuario {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+.texto-usuario {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ===== ESCENA PRINCIPAL ===== */
+.escena {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 75px);
+  background-image: url(img2/fondo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* ===== CONTENEDOR IZQUIERDO (TARJETAS ARRIBA, BOTÓN FIJO ABAJO) ===== */
+.contenedor-panel-izq {
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 420px;
+  height: 85vh;
+  display: flex;
+  flex-direction: column; /* Apila las tarjetas y manda el botón al fondo */
+  gap: 16px;
+  z-index: 5;
+}
+
+/* ===== PANEL DE TARJETAS (CON SCROLL INTERNO PROPIO) ===== */
+.panel-tarjetas {
+  flex: 1; /* Ocupa todo el espacio superior y scrollea solito */
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 4px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.6) transparent;
+}
+
+.panel-tarjetas::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel-tarjetas::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+/* TARJETAS DE TRAJES */
+.tarjeta {
+  background: rgba(121, 90, 5, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 18px;
+  height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  backdrop-filter: blur(4px);
+  padding: 10px;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.tarjeta img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+}
+
+/* ===== ESTILO Y POSICIÓN DEL BOTÓN REINICIO ===== */
+.boton-reinicio {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  flex-shrink: 0; /* Evita que el botón se deforme */
+}
+
+.boton-reinicio:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.boton-reinicio img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+}
+
+/* ===== CONTENEDOR PERSONAJE Y PODIO ===== */
+.contenedor-personaje {
+  position: absolute;
+  left: 65%;
+  transform: translateX(-50%);
+  bottom: 8%; /* Subimos un poco el contenedor general para que gane altura */
+  width: 450px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 9;
+}
+
+/* PERSONAJE SOBRE EL PODIO CENTRAL */
+.personaje {
+  display: block;
+  position: absolute;
+  bottom: 120px; /* Aumentamos esto para elevar al personaje más arriba sobre las piedras */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: auto;
+  z-index: 2;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.4));
+  transition: width 0.2s ease;
+}
+
+/* PODIO EN EL CENTRO */
+.podio {
+  width: 460px;
+  height: auto;
+  position: absolute;
+  bottom: -40px; /* Corregido para que apoye bien */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5));
+}
+
+/* PERSONAJE SOBRE EL PODIO CENTRAL */
+.personaje {
+  display: block;
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: auto;
+  z-index: 2;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.4));
+  transition: width 0.2s ease;
+}
+
+/* ===== TAMAÑOS ESPECÍFICOS POR PAÍS ===== */
+.personaje-argentina { width: 230px; }
+.personaje-bolivia   { width: 185px; }
+.personaje-brazil    { width: 215px; }
+.personaje-chile     { width: 185px; }
+.personaje-colombia  { width: 205px; }
+.personaje-ecuador   { width: 195px; }
+.personaje-paraguay  { width: 187px; }
+.personaje-peru      { width: 195px; }
+.personaje-uruguay   { width: 197px; }
+.personaje-venezuela { width: 200px; }

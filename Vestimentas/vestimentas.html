@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoPlanet - Aspecto</title>
+  <link rel="stylesheet" href="./vestimentas.css">
+</head>
+<body>
+  <div class="pantalla-juego">
+    <!-- BARRA MINI -->
+    <div class="barra-mini">
+      <span class="mini-item">GEO</span>
+      <span class="mini-item">Planet</span>
+    </div>
+
+    <!-- BARRA PRINCIPAL -->
+    <header class="barra-principal">
+      <div class="grupo-izquierda">
+        <button id="btn-atras" class="boton-atras" aria-label="Volver atrás">
+          <img src="img2/botonatras.png" alt="Volver">
+        </button>
+        <img src="img2/cofre.png" alt="Cofre" class="icono-cofre">
+        <h1 class="titulo-pantalla">Aspecto</h1>
+      </div>
+      <div class="grupo-derecha">
+        <img src="img2/logo.png" alt="GeoPlanet" class="logo-juego">
+        <div class="usuario">
+          <img src="img2/logo de usuario.png" alt="Usuario" class="icono-usuario">
+          <span class="texto-usuario">Usuario</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ESCENA PRINCIPAL -->
+    <main class="escena">
+      
+      <!-- CONTENEDOR IZQUIERDO: TARJETAS ARRIBA + BOTÓN REINICIO FIJO ABAJO -->
+      <div class="contenedor-panel-izq">
+        <div class="panel-tarjetas">
+          <div class="tarjeta" data-pais="argentina">
+            <img src="img/v.Argentina.png" alt="Argentina">
+          </div>
+          <div class="tarjeta" data-pais="bolivia">
+            <img src="img/v.Bolivia.png" alt="Bolivia">
+          </div>
+          <div class="tarjeta" data-pais="brazil">
+            <img src="img/v.Brazil.png" alt="Brasil">
+          </div>
+          <div class="tarjeta" data-pais="chile">
+            <img src="img/v.Chile.png" alt="Chile">
+          </div>
+          <div class="tarjeta" data-pais="colombia">
+            <img src="img/v.Colombia.png" alt="Colombia">
+          </div>
+          <div class="tarjeta" data-pais="ecuador">
+            <img src="img/v.Ecuador.png" alt="Ecuador">
+          </div>
+          <div class="tarjeta" data-pais="paraguay">
+            <img src="img/v.Paraguay.png" alt="Paraguay">
+          </div>
+          <div class="tarjeta" data-pais="peru">
+            <img src="img/v.Peru.png" alt="Perú">
+          </div>
+          <div class="tarjeta" data-pais="uruguay">
+            <img src="img/v.Uruguay.png" alt="Uruguay">
+          </div>
+          <div class="tarjeta" data-pais="venezuela">
+            <img src="img/v.Venezuela.png" alt="Venezuela">
+          </div>
+        </div>
+
+        <!-- BOTÓN DE REINICIO ABAJO DE LAS TARJETAS -->
+        <button id="btn-reinicio" class="boton-reinicio">
+          <img src="img2/boton_reinicio.png" alt="Reiniciar aspecto">
+        </button>
+      </div>
+
+      <!-- PERSONAJE Y PODIO -->
+      <div class="contenedor-personaje">
+        <img id="img-personaje" src="img2/Personaje con vest.png" alt="Personaje" class="personaje">
+        <img src="img2/Podio.png" alt="Podio" class="podio">
+      </div>
+
+    </main>
+  </div>
+  <script src="./vestimentas.js"></script>
+</body>
+</html>
