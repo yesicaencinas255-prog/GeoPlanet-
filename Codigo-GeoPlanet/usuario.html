@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoPlanet - Perfil de Usuario</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/usuario.css" />
+</head>
+<body>
+  <!-- CAPA DE FONDO CON LA IMAGEN DE USUARIO -->
+  <div class="user-background-layer">
+    <img src="imagenes/image.png" alt="Fondo de Bosque" class="bg-img" />
+  </div>
+
+  <!-- TARJETA MODAL PRINCIPAL -->
+  <div class="modal-card">
+    <header class="card-header">
+      <a href="menu.html" class="btn-back" id="btn-back" title="Volver al Menú">
+        <img src="imagenes/flechaparairatrasss.png" alt="Atrás" class="icon-back" />
+      </a>
+      <!-- TÍTULO EN LA BARRA AZUL -->
+      <h1 class="header-title">Perfil</h1>
+      <div class="logo-wrapper">
+        <img src="imagenes/logo.png" alt="GeoPlanet Logo" class="game-logo" />
+      </div>
+    </header>
+
+    <div class="card-body">
+      <div class="profile-side">
+        <div class="avatar-container">
+          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=GeoPlayer" alt="Avatar" class="avatar-img" id="user-avatar" />
+          <span class="level-badge" id="user-level">Niv. 1</span>
+        </div>
+        <h2 class="user-name" id="user-name">Usuario</h2>
+        <span class="user-tag" id="user-tag">@nuevo_explorador</span>
+        <div class="xp-bar-box">
+          <div class="xp-bar-fill" id="xp-fill"></div>
+        </div>
+        <p class="xp-text" id="xp-text">0 / 100 XP</p>
+      </div>
+
+      <div class="info-side">
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="stat-icon">🏆</span>
+            <div class="stat-content">
+              <span class="stat-title">LOGROS</span>
+              <span class="stat-num" id="val-logros">0 / 30</span>
+            </div>
+          </div>
+          <div class="stat-box">
+            <span class="stat-icon">⭐</span>
+            <div class="stat-content">
+              <span class="stat-title">PUNTOS</span>
+              <span class="stat-num" id="val-puntos">0</span>
+            </div>
+          </div>
+          <div class="stat-box">
+            <span class="stat-icon">🎮</span>
+            <div class="stat-content">
+              <span class="stat-title">PARTIDAS</span>
+              <span class="stat-num" id="val-partidas">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>🏆 Logros</h3>
+          <div class="achievements-list" id="achievements-list">
+            <div class="achievement-card">
+              <span class="ach-icon">🎯</span>
+              <div>
+                <h4>Primera Ubicación</h4>
+                <p>Juega tu primera partida en GeoPlanet</p>
+              </div>
+            </div>
+            <div class="achievement-card">
+              <span class="ach-icon">🔥</span>
+              <div>
+                <h4>Respuesta Perfecta</h4>
+                <p>Responde sin usar ninguna pista</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h3>📜 Partidas Recientes</h3>
+          <div class="history-list" id="history-list">
+            <p class="empty-msg">No hay partidas registradas todavía.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="JavaScript/usuario.js"></script>
+  <script src="JavaScript/geoplanet-audio.js"></script>
+</body>
+</html>
