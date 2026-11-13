@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Geo Planet - Ajustes</title>
+        <link rel="stylesheet" href="CSS/ajustes.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-left">
+                <button onclick="irAPagina2()" class="flecha" title="Volver">
+                    <img src="imagenes/flechaparairatrasss.png" alt="Volver">
+                </button>
+                <img src="imagenes/ajuste_1.png" class="ajuste" alt="Ajuste">
+                <h1 class="titulo_ajustes">Ajustes</h1>
+            </div>
+            <div class="header-right">
+                <img src="imagenes/geoplanetlogo.png" class="logo" alt="Geo Planet">
+                <div class="usuario-container">
+                    <img src="imagenes/usuario.png" class="cuenta" alt="Cuenta">
+                    <span class="texto-usuario" id="nombre-usuario">Usuario</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="panel-ajustes">
+            <div class="tarjeta-ajustes">
+                <!-- Música -->
+                <div class="fila-control">
+                    <span class="texto-opcion">Música</span>
+                    <div class="control-slider-wrapper">
+                        <input type="range" id="volumen-musica" min="0" max="1" step="0.01" value="0.8">
+                        <span class="porcentaje-texto" id="texto-musica">80%</span>
+                    </div>
+                </div>
+
+                <!-- Sonido -->
+                <div class="fila-control">
+                    <span class="texto-opcion">Sonido</span>
+                    <div class="control-slider-wrapper">
+                        <input type="range" id="volumen-sonido" min="0" max="1" step="0.01" value="0.8">
+                        <span class="porcentaje-texto" id="texto-sonido">80%</span>
+                    </div>
+                </div>
+
+                <!-- Resolución -->
+                <div class="fila-control">
+                    <span class="texto-opcion">Resolución</span>
+                    <div class="control-resolucion">
+                        <button class="flecha-resolucion" id="btn-res-anterior" title="Anterior">◀</button>
+                        <div class="resolucion-valor" id="valor-resolucion">1280 x 720</div>
+                        <button class="flecha-resolucion" id="btn-res-siguiente" title="Siguiente">▶</button>
+                    </div>
+                </div>
+
+                <!-- Modo Daltónico -->
+                <div class="fila-control">
+                    <span class="texto-opcion">Modo Daltónico</span>
+                    <div class="control-daltonico">
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-daltonico">
+                            <span class="slider-round"></span>
+                        </label>
+                        <span class="estado-daltonico" id="texto-daltonico">Desactivado</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Scripts -->
+        <script src="JavaScript/acciones.js"></script>
+     <script src="JavaScript/geoplanet-audio.js"></script>
+        <script src="JavaScript/ajustes.js"></script>
+    </body>
+</html>
