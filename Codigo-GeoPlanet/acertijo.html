@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Planet - Nivel 1</title>
+    
+    <!-- Fuente moderna estilo Sans-serif (Fredoka) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="CSS/acertijo.css">
+    <script src="JavaScript/score.js"></script>
+</head>
+<body>
+
+    <!-- Botón de regresar (Arriba a la izquierda) -->
+    <button class="boton-navegacion boton-anterior" onclick="salir()" title="Anterior">
+        <img src="imagenes/flechaparairatrasss.png" alt="Anterior">
+    </button>
+
+    <!-- Cronómetro centrado arriba con el botón de pausa integrado -->
+    <div class="cronometro-contenedor">
+        <div class="cronometro-caja">
+            <button class="btn-pausa" onclick="alternarPausa()" title="Pausar juego">
+                <div class="pausa-iconos">
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <img src="imagenes/Reloj.png" alt="Reloj" class="icono-reloj">
+            <span id="tiempo">00:25</span>
+        </div>
+    </div>
+
+    <!-- Usuario e Iconos superiores -->
+    <div class="header-iconos">
+        <div class="logo"><img src="imagenes/geoplanetlogo.png" alt="GeoPlanet"></div>
+        <div class="usuario"><img src="imagenes/usuario.png" alt="Usuario"></div>
+    </div>
+
+    <!-- Contenedor Principal del Juego -->
+    <main class="juego-container">
+        
+        <!-- Tarjeta de Pregunta -->
+        <div class="pregunta-card">
+            <h1>Acertijos</h1>
+            <p>
+                Del tango rioplatense soy la cuna y el hogar<br>
+                y un Obelisco blanco tengo para festejar
+            </p>
+        </div>
+
+        <!-- Layout central para equilibrar la tarjeta o contenido de pistas lateral -->
+        <div class="centro-juego-layout">
+            <div class="pistas-container" id="pistasContainer">
+                <button class="btn-pista" id="pistaBtn1" onclick="usarPista(1)">💡 Pista 1</button>
+                <button class="btn-pista" id="pistaBtn2" onclick="usarPista(2)">💡 Pista 2</button>
+                <button class="btn-pista" id="pistaBtn3" onclick="usarPista(3)">💡 Pista 3</button>
+            </div>
+        </div>
+
+        <!-- Aviso de Advertencia (Oculto inicialmente) -->
+        <div id="avisoAdvertencia" class="aviso-pista" style="display: none;">
+            <div class="icono-alerta-rojo">i</div>
+            <span class="texto-advertencia"><strong>Advertencia:</strong> Abrir una pista resta tiempo (-3s) y puntaje (-3 pts)</span>
+        </div>
+
+        <!-- Cuadro de Texto de Pista Activa -->
+        <div id="textoPistaBox" class="texto-pista-box" style="display: none;">
+            <p id="contenidoPista">Aquí aparecerá la pista...</p>
+        </div>
+
+        <!-- Botones de Opciones -->
+        <div class="respuestas-grid">
+            <button id="argentina" class="btn-juego" onclick="responder('Argentina')">Argentina</button>
+            <button id="bolivia" class="btn-juego" onclick="responder('Bolivia')">Bolivia</button>
+            <button id="chile" class="btn-juego" onclick="responder('Chile')">Chile</button>
+            <button id="venezuela" class="btn-juego" onclick="responder('Venezuela')">Venezuela</button>
+        </div>
+
+        <!-- Mensaje de Resultado -->
+        <div id="mensajeResultado" class="mensaje-resultado"></div>
+
+    </main>
+
+    <!-- Modal de Pausa -->
+    <div id="modalPausa" class="modal-pausa-overlay">
+        <div class="modal-pausa-caja">
+            <h2>JUEGO PAUSADO</h2>
+            <p>Tómate tu tiempo. ¿Qué deseas hacer?</p>
+            <div class="modal-botones">
+                <button class="btn-modal btn-reanudar" onclick="alternarPausa()">
+                    <span class="icono-btn">▶</span> Reanudar
+                </button>
+                <button class="btn-modal btn-salir" onclick="salir()">
+                    <span class="icono-btn">🚪</span> Salir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de Siguiente Pantalla (Abajo a la derecha) -->
+    <button class="boton-navegacion boton-siguiente" onclick="siguienteNivel()" title="Siguiente">
+        <img src="imagenes/flechaparairatrasss.png" alt="Siguiente" class="icono-siguiente">
+    </button>
+
+    <script src="JavaScript/acertijo.js"></script>
+</body>
+</html>
